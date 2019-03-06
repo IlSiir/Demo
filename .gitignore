@@ -3,3 +3,5 @@
 ################################################################################
 
 /WorkoutTracker/WorkoutTracker/bin/Debug/netcoreapp2.1
+/WorkoutTracker/WorkoutTracker/obj
+/WorkoutTracker/.vs
