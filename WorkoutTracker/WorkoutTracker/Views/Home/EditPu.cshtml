@@ -1,0 +1,105 @@
+﻿@model WorkoutTracker.Database.Punttiennosto
+
+@{
+    ViewData["Title"] = "EditPu";
+}
+
+<h2>EditPu</h2>
+
+<h4>Punttiennosto</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="EditPu">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="PunttiID" class="control-label"></label>
+                <input asp-for="PunttiID" class="form-control" />
+                <span asp-validation-for="PunttiID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Päivämäärä" class="control-label"></label>
+                <input asp-for="Päivämäärä" class="form-control" />
+                <span asp-validation-for="Päivämäärä" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Penkkipunnerruspaino" class="control-label"></label>
+                <input asp-for="Penkkipunnerruspaino" class="form-control" />
+                <span asp-validation-for="Penkkipunnerruspaino" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Penkkipunnerrustoistot" class="control-label"></label>
+                <input asp-for="Penkkipunnerrustoistot" class="form-control" />
+                <span asp-validation-for="Penkkipunnerrustoistot" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Ylätaljapaino" class="control-label"></label>
+                <input asp-for="Ylätaljapaino" class="form-control" />
+                <span asp-validation-for="Ylätaljapaino" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Ylätaljatoistot" class="control-label"></label>
+                <input asp-for="Ylätaljatoistot" class="form-control" />
+                <span asp-validation-for="Ylätaljatoistot" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Hauistankopaino" class="control-label"></label>
+                <input asp-for="Hauistankopaino" class="form-control" />
+                <span asp-validation-for="Hauistankopaino" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Hauistankotoistot" class="control-label"></label>
+                <input asp-for="Hauistankotoistot" class="form-control" />
+                <span asp-validation-for="Hauistankotoistot" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Kyykkypaino" class="control-label"></label>
+                <input asp-for="Kyykkypaino" class="form-control" />
+                <span asp-validation-for="Kyykkypaino" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Kyykkytoistot" class="control-label"></label>
+                <input asp-for="Kyykkytoistot" class="form-control" />
+                <span asp-validation-for="Kyykkytoistot" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Deadliftpaino" class="control-label"></label>
+                <input asp-for="Deadliftpaino" class="form-control" />
+                <span asp-validation-for="Deadliftpaino" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Deadlifttoistot" class="control-label"></label>
+                <input asp-for="Deadlifttoistot" class="form-control" />
+                <span asp-validation-for="Deadlifttoistot" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Hauisvasenpaino" class="control-label"></label>
+                <input asp-for="Hauisvasenpaino" class="form-control" />
+                <span asp-validation-for="Hauisvasenpaino" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Hauisvasentoistot" class="control-label"></label>
+                <input asp-for="Hauisvasentoistot" class="form-control" />
+                <span asp-validation-for="Hauisvasentoistot" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Hauisoikeapaino" class="control-label"></label>
+                <input asp-for="Hauisoikeapaino" class="form-control" />
+                <span asp-validation-for="Hauisoikeapaino" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Hauisoikeatoistot" class="control-label"></label>
+                <input asp-for="Hauisoikeatoistot" class="form-control" />
+                <span asp-validation-for="Hauisoikeatoistot" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Puntit">Back to List</a>
+</div>
+

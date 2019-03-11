@@ -54,7 +54,40 @@ namespace WorkoutTracker.Controllers
 
             return RedirectToAction("Aerobinen");
         }
-        
+
+        public ActionResult EditA(int Id)
+        {
+            WorkoutTrackerContext context1 = new WorkoutTrackerContext();
+            Aerobinenharjoitus aeroid = context1.Aerobinenharjoitus.Find(Id);
+
+            return View(aeroid);
+        }
+
+        [HttpPost]
+        public ActionResult EditA(int Id, [FromForm] Aerobinenharjoitus muutokset)
+        {
+            WorkoutTrackerContext context1 = new WorkoutTrackerContext();
+            Aerobinenharjoitus aero = context1.Aerobinenharjoitus.Find(Id);
+
+            if (aero == null)
+            {
+                return null;
+            }
+
+            // muokkaus
+            aero.AeroID = muutokset.AeroID;
+            aero.Päivämäärä = muutokset.Päivämäärä;
+            aero.Lenkkeilymatka = muutokset.Lenkkeilymatka;
+            aero.Lenkkeilyaika = muutokset.Lenkkeilyaika;
+            aero.Pyöräilymatka = muutokset.Pyöräilymatka;
+            aero.Pyöräilyaika = muutokset.Pyöräilyaika;
+            aero.Hyppynaru = muutokset.Hyppynaru;
+            aero.Nyrkkeilysäkkiaika = muutokset.Nyrkkeilysäkkiaika;
+
+            context1.SaveChanges();
+
+            return RedirectToAction("Aerobinen");
+        }
 
         [HttpPost]
         public IActionResult CreateA([FromForm] Aerobinenharjoitus uusi2)
@@ -113,6 +146,38 @@ namespace WorkoutTracker.Controllers
             return RedirectToAction("Perus");
         }
 
+        public ActionResult EditPe(int Id)
+        {
+            WorkoutTrackerContext context1 = new WorkoutTrackerContext();
+            Perusharjoitukset peruid = context1.Perusharjoitukset.Find(Id);
+
+            return View(peruid);
+        }
+
+        [HttpPost]
+        public ActionResult EditPe(int Id, [FromForm] Perusharjoitukset muutokset)
+        {
+            WorkoutTrackerContext context1 = new WorkoutTrackerContext();
+            Perusharjoitukset perus = context1.Perusharjoitukset.Find(Id);
+
+            if (perus == null)
+            {
+                return null;
+            }
+
+            // muokkaus
+            perus.PerusID = muutokset.PerusID;
+            perus.Päivämäärä = muutokset.Päivämäärä;
+            perus.Vatsalihas = muutokset.Vatsalihas;
+            perus.Etunojapunnerrus = muutokset.Etunojapunnerrus;
+            perus.Selkälihas = muutokset.Selkälihas;
+            perus.Jalkakyykky = muutokset.Jalkakyykky;
+
+            context1.SaveChanges();
+
+            return RedirectToAction("Perus");
+        }
+
         public IActionResult Puntit()
         {
             ViewData["Message"] = "Punttien nosto.";
@@ -160,7 +225,47 @@ namespace WorkoutTracker.Controllers
             return RedirectToAction("Puntit");
         }
 
+        public ActionResult EditPu(int Id)
+        {
+            WorkoutTrackerContext context1 = new WorkoutTrackerContext();
+            Punttiennosto puntid = context1.Punttiennosto.Find(Id);
 
+            return View(puntid);
+        }
+
+        [HttpPost]
+        public ActionResult EditPu(int Id, [FromForm] Punttiennosto muutokset)
+        {
+            WorkoutTrackerContext context1 = new WorkoutTrackerContext();
+            Punttiennosto puntti = context1.Punttiennosto.Find(Id);
+
+            if (puntti == null)
+            {
+                return null;
+            }
+
+            // muokkaus
+            puntti.PunttiID = muutokset.PunttiID;
+            puntti.Päivämäärä = muutokset.Päivämäärä;
+            puntti.Penkkipunnerruspaino = muutokset.Penkkipunnerruspaino;
+            puntti.Penkkipunnerrustoistot = muutokset.Penkkipunnerrustoistot;
+            puntti.Ylätaljapaino = muutokset.Ylätaljapaino;
+            puntti.Ylätaljatoistot = muutokset.Ylätaljatoistot;
+            puntti.Hauistankopaino = muutokset.Hauistankopaino;
+            puntti.Hauistankotoistot = muutokset.Hauistankotoistot;
+            puntti.Kyykkypaino = muutokset.Kyykkypaino;
+            puntti.Kyykkytoistot = muutokset.Kyykkytoistot;
+            puntti.Deadliftpaino = muutokset.Deadliftpaino;
+            puntti.Deadlifttoistot = muutokset.Deadlifttoistot;
+            puntti.Hauisvasenpaino = muutokset.Hauisvasenpaino;
+            puntti.Hauisvasentoistot = muutokset.Hauisvasentoistot;
+            puntti.Hauisoikeapaino = muutokset.Hauisoikeapaino;
+            puntti.Hauisoikeatoistot = muutokset.Hauisoikeatoistot;
+
+            context1.SaveChanges();
+
+            return RedirectToAction("Puntit");
+        }
 
 
 
