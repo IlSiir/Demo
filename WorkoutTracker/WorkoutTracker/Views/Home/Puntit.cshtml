@@ -71,6 +71,7 @@
         <tr>
             <td>
                 @Html.ActionLink("Edit", "EditPu", new { id = item.PunttiID }) |
+                @Html.ActionLink("Delete", "DeletePu", new { id = item.PunttiID })
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.PunttiID)

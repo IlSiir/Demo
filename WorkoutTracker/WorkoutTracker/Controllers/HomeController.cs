@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using WorkoutTracker.Models;
 using WorkoutTracker.Database;
+using Microsoft.AspNetCore.Http;
 
 namespace WorkoutTracker.Controllers
 {
@@ -20,7 +21,7 @@ namespace WorkoutTracker.Controllers
         {
             ViewData["Message"] = "Aerobiset harjoitukset.";
             WorkoutTrackerContext context = new WorkoutTrackerContext();
-            List<Database.Aerobinenharjoitus> allAerobinen = context.aerobinenharjoitus.ToList();
+            List<Aerobinenharjoitus> allAerobinen = context.Aerobinenharjoitus.ToList();
 
             return View(allAerobinen);
         }
@@ -30,32 +31,46 @@ namespace WorkoutTracker.Controllers
             return View();
         }
 
-        [HttpDelete]
-        public IActionResult DeleteA(int AeroID)
+        
+        public ActionResult DeleteA(int Id)
         {
             WorkoutTrackerContext context1 = new WorkoutTrackerContext();
-            Database.Aerobinenharjoitus aeroid = context1.aerobinenharjoitus.Find(AeroID);
-            context1.aerobinenharjoitus.Remove(aeroid);
-            context1.SaveChanges();
+            Aerobinenharjoitus aeroid = context1.Aerobinenharjoitus.Find(Id);
 
-            return RedirectToAction("Aerobinen");
+            return View(aeroid);
         }
 
         [HttpPost]
-        public IActionResult CreateA([FromForm] Database.Aerobinenharjoitus uusi2)
+        public ActionResult DeleteA(int Id, IFormCollection form)
+        {
+            WorkoutTrackerContext context1 = new WorkoutTrackerContext();
+            Aerobinenharjoitus aero = context1.Aerobinenharjoitus.Find(Id);
+
+            if (aero != null)
+            {
+                context1.Aerobinenharjoitus.Remove(aero);
+                context1.SaveChanges();
+            }
+
+            return RedirectToAction("Aerobinen");
+        }
+        
+
+        [HttpPost]
+        public IActionResult CreateA([FromForm] Aerobinenharjoitus uusi2)
         {
             WorkoutTrackerContext context2 = new WorkoutTrackerContext();
-            context2.aerobinenharjoitus.Add(uusi2);
+            context2.Aerobinenharjoitus.Add(uusi2);
             context2.SaveChanges();
 
-            return Redirect("Aerobinen");
+            return RedirectToAction("Aerobinen");
         }
 
         public IActionResult Perus()
         {
             ViewData["Message"] = "Perus harjoitukset.";
             WorkoutTrackerContext context = new WorkoutTrackerContext();
-            List<Database.Perusharjoitukset> allPerus = context.Perusharjoitukset.ToList();
+            List<Perusharjoitukset> allPerus = context.Perusharjoitukset.ToList();
 
             return View(allPerus);
         }
@@ -66,20 +81,43 @@ namespace WorkoutTracker.Controllers
         }
 
         [HttpPost]
-        public IActionResult CreatePe([FromForm] Database.Perusharjoitukset uusi2)
+        public IActionResult CreatePe([FromForm] Perusharjoitukset uusi2)
         {
             WorkoutTrackerContext context2 = new WorkoutTrackerContext();
             context2.Perusharjoitukset.Add(uusi2);
             context2.SaveChanges();
 
-            return Redirect("Perus");
+            return RedirectToAction("Perus");
+        }
+
+        public ActionResult DeletePe(int Id)
+        {
+            WorkoutTrackerContext context1 = new WorkoutTrackerContext();
+            Perusharjoitukset peruid = context1.Perusharjoitukset.Find(Id);
+
+            return View(peruid);
+        }
+
+        [HttpPost]
+        public ActionResult DeletePe(int Id, IFormCollection form)
+        {
+            WorkoutTrackerContext context1 = new WorkoutTrackerContext();
+            Perusharjoitukset peru = context1.Perusharjoitukset.Find(Id);
+
+            if (peru != null)
+            {
+                context1.Perusharjoitukset.Remove(peru);
+                context1.SaveChanges();
+            }
+
+            return RedirectToAction("Perus");
         }
 
         public IActionResult Puntit()
         {
             ViewData["Message"] = "Punttien nosto.";
             WorkoutTrackerContext context = new WorkoutTrackerContext();
-            List<Database.Punttiennosto> allPuntit = context.Punttiennosto.ToList();
+            List<Punttiennosto> allPuntit = context.Punttiennosto.ToList();
 
             return View(allPuntit);           
         }
@@ -90,15 +128,37 @@ namespace WorkoutTracker.Controllers
         }
 
         [HttpPost]
-        public IActionResult CreatePu([FromForm] Database.Punttiennosto uusi2)
+        public IActionResult CreatePu([FromForm] Punttiennosto uusi2)
         {
             WorkoutTrackerContext context2 = new WorkoutTrackerContext();
             context2.Punttiennosto.Add(uusi2);
             context2.SaveChanges();
 
-            return Redirect("Puntit");
+            return RedirectToAction("Puntit");
         }
 
+        public ActionResult DeletePu(int Id)
+        {
+            WorkoutTrackerContext context1 = new WorkoutTrackerContext();
+            Punttiennosto puntid = context1.Punttiennosto.Find(Id);
+
+            return View(puntid);
+        }
+
+        [HttpPost]
+        public ActionResult DeletePu(int Id, IFormCollection form)
+        {
+            WorkoutTrackerContext context1 = new WorkoutTrackerContext();
+            Punttiennosto punt = context1.Punttiennosto.Find(Id);
+
+            if (punt != null)
+            {
+                context1.Punttiennosto.Remove(punt);
+                context1.SaveChanges();
+            }
+
+            return RedirectToAction("Puntit");
+        }
 
 
 

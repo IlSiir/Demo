@@ -1,0 +1,68 @@
+﻿@model WorkoutTracker.Database.Aerobinenharjoitus
+
+@{
+    ViewData["Title"] = "DeleteA";
+}
+
+<h2>DeleteA</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Aerobinenharjoitus</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.AeroID)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.AeroID)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Päivämäärä)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Päivämäärä)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Lenkkeilymatka)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Lenkkeilymatka)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Lenkkeilyaika)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Lenkkeilyaika)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Pyöräilymatka)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Pyöräilymatka)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Pyöräilyaika)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Pyöräilyaika)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Hyppynaru)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Hyppynaru)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Nyrkkeilysäkkiaika)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Nyrkkeilysäkkiaika)
+        </dd>
+    </dl>
+    
+    <form asp-action="DeleteA">
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        <a asp-action="Aerobinen">Back to List</a>
+    </form>
+</div>

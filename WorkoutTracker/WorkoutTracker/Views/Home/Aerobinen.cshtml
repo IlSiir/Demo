@@ -48,7 +48,7 @@
             
             <td>
                 @Html.ActionLink("Edit", "EditA", new { id = item.AeroID }) |
-                <a href="@Url.Action("Delete", "Home/Aerobinen"), new { id = item.Id }" class="btn btn-success btn-xs">Delete</a>
+                @Html.ActionLink("Delete", "DeleteA", new {id = item.AeroID  })
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.AeroID)

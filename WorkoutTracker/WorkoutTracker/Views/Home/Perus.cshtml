@@ -41,6 +41,7 @@
         <tr>
             <td>
                 @Html.ActionLink("Edit", "EditPe", new { id = item.PerusID }) |
+                @Html.ActionLink("Delete", "DeletePe", new { id = item.PerusID })
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.PerusID)

@@ -15,7 +15,7 @@ namespace WorkoutTracker.Database
         {
         }
 
-        public virtual DbSet<Aerobinenharjoitus> aerobinenharjoitus { get; set; }
+        public virtual DbSet<Aerobinenharjoitus> Aerobinenharjoitus { get; set; }
         public virtual DbSet<Perusharjoitukset> Perusharjoitukset { get; set; }
         public virtual DbSet<Punttiennosto> Punttiennosto { get; set; }
 

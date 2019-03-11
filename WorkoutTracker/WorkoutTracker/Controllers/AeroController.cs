@@ -17,7 +17,7 @@ namespace WorkoutTracker.Controllers
         public List<Aerobinenharjoitus> Listaus1()
         {
             WorkoutTrackerContext context1 = new WorkoutTrackerContext();
-            List<Aerobinenharjoitus> allresults1 = context1.aerobinenharjoitus.ToList();
+            List<Aerobinenharjoitus> allresults1 = context1.Aerobinenharjoitus.ToList();
 
             return allresults1;
         }
@@ -27,7 +27,7 @@ namespace WorkoutTracker.Controllers
         public Aerobinenharjoitus Yksittäinen(int aeroId)
         {
             WorkoutTrackerContext context1 = new WorkoutTrackerContext();
-            Aerobinenharjoitus aero = context1.aerobinenharjoitus.Find(aeroId);
+            Aerobinenharjoitus aero = context1.Aerobinenharjoitus.Find(aeroId);
 
             // LINQ
             //Customers asiakas2 = (from c in context.Customers
@@ -42,7 +42,7 @@ namespace WorkoutTracker.Controllers
         public bool Luonti1([FromBody] Aerobinenharjoitus uusi1)
         {
             WorkoutTrackerContext context1 = new WorkoutTrackerContext();
-            context1.aerobinenharjoitus.Add(uusi1);
+            context1.Aerobinenharjoitus.Add(uusi1);
             context1.SaveChanges();
 
             return true;
@@ -53,7 +53,7 @@ namespace WorkoutTracker.Controllers
         public Aerobinenharjoitus Muokkaus1(int aeroID, [FromBody] Aerobinenharjoitus muutokset)
         {
             WorkoutTrackerContext context1 = new WorkoutTrackerContext();
-            Aerobinenharjoitus aero = context1.aerobinenharjoitus.Find(aeroID);
+            Aerobinenharjoitus aero = context1.Aerobinenharjoitus.Find(aeroID);
 
             // löytyikö asiakas annetulla id:llä?
             if (aero == null)
@@ -82,14 +82,14 @@ namespace WorkoutTracker.Controllers
         public bool Poisto1(int AeroID)
         {
             WorkoutTrackerContext context1 = new WorkoutTrackerContext();
-            Aerobinenharjoitus aero = context1.aerobinenharjoitus.Find(AeroID);
+            Aerobinenharjoitus aero = context1.Aerobinenharjoitus.Find(AeroID);
 
             if (aero == null)
             {
                 return false;
             }
 
-            context1.aerobinenharjoitus.Remove(aero);
+            context1.Aerobinenharjoitus.Remove(aero);
             context1.SaveChanges();
 
             return true;

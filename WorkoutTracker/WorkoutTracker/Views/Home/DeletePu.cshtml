@@ -1,0 +1,116 @@
+﻿@model WorkoutTracker.Database.Punttiennosto
+
+@{
+    ViewData["Title"] = "DeletePu";
+}
+
+<h2>DeletePu</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Punttiennosto</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PunttiID)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PunttiID)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Päivämäärä)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Päivämäärä)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Penkkipunnerruspaino)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Penkkipunnerruspaino)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Penkkipunnerrustoistot)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Penkkipunnerrustoistot)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Ylätaljapaino)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Ylätaljapaino)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Ylätaljatoistot)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Ylätaljatoistot)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Hauistankopaino)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Hauistankopaino)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Hauistankotoistot)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Hauistankotoistot)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Kyykkypaino)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Kyykkypaino)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Kyykkytoistot)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Kyykkytoistot)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Deadliftpaino)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Deadliftpaino)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Deadlifttoistot)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Deadlifttoistot)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Hauisvasenpaino)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Hauisvasenpaino)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Hauisvasentoistot)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Hauisvasentoistot)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Hauisoikeapaino)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Hauisoikeapaino)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Hauisoikeatoistot)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Hauisoikeatoistot)
+        </dd>
+    </dl>
+    
+    <form asp-action="DeletePu">
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        <a asp-action="Puntit">Back to List</a>
+    </form>
+</div>

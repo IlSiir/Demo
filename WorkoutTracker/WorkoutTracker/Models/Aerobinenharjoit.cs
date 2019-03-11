@@ -7,15 +7,17 @@ using System.Threading.Tasks;
 
 namespace WorkoutTracker.Models
 {
-    public class Perusharjoitukset
+    public class Aerobinenharjoit
     {
-        public int PerusID { get; set; }
+        public int AeroID { get; set; }
         [Display(Name = "Päivämäärä")]
         [DataType(DataType.Date)]
         public DateTime Päivämäärä { get; set; }
-        public int? Vatsalihas { get; set; }
-        public int? Etunojapunnerrus { get; set; }
-        public int? Selkälihas { get; set; }
-        public int? Jalkakyykky { get; set; }
+        public int? Lenkkeilymatka { get; set; }
+        public int? Lenkkeilyaika { get; set; }
+        public int? Pyöräilymatka { get; set; }
+        public int? Pyöräilyaika { get; set; }
+        public int? Hyppynaru { get; set; }
+        public int? Nyrkkeilysäkkiaika { get; set; }
     }
 }

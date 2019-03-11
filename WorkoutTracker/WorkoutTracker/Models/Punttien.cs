@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace WorkoutTracker.Models
 {
-    public class Punttiennosto
+    public class Punttien
     {
         public int PunttiID { get; set; }
         [Display(Name = "Päivämäärä")]
