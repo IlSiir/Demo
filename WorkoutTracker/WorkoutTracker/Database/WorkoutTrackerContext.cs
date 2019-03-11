@@ -15,7 +15,7 @@ namespace WorkoutTracker.Database
         {
         }
 
-        public virtual DbSet<Aerobinenharjoitus> Aerobinenharjoitus { get; set; }
+        public virtual DbSet<Aerobinenharjoitus> aerobinenharjoitus { get; set; }
         public virtual DbSet<Perusharjoitukset> Perusharjoitukset { get; set; }
         public virtual DbSet<Punttiennosto> Punttiennosto { get; set; }
 
@@ -32,33 +32,33 @@ namespace WorkoutTracker.Database
         {
             modelBuilder.Entity<Aerobinenharjoitus>(entity =>
             {
-                entity.HasKey(e => e.Päivämäärä);
+                entity.HasKey(e => e.AeroID);
 
-                entity.Property(e => e.Päivämäärä).HasColumnType("date");
+                entity.Property(e => e.AeroID).HasColumnType("int");
 
-                entity.Property(e => e.Kuukausi)
+                entity.Property(e => e.Päivämäärä)
                     .IsRequired()
                     .HasMaxLength(20);
             });
 
             modelBuilder.Entity<Perusharjoitukset>(entity =>
             {
-                entity.HasKey(e => e.Päivämäärä);
+                entity.HasKey(e => e.PerusID);
 
-                entity.Property(e => e.Päivämäärä).HasColumnType("date");
+                entity.Property(e => e.PerusID).HasColumnType("int");
 
-                entity.Property(e => e.Kuukausi)
+                entity.Property(e => e.Päivämäärä)
                     .IsRequired()
                     .HasMaxLength(20);
             });
 
             modelBuilder.Entity<Punttiennosto>(entity =>
             {
-                entity.HasKey(e => e.Päivämäärä);
+                entity.HasKey(e => e.PunttiID);
 
-                entity.Property(e => e.Päivämäärä).HasColumnType("date");
+                entity.Property(e => e.PunttiID).HasColumnType("int");
 
-                entity.Property(e => e.Kuukausi)
+                entity.Property(e => e.Päivämäärä)
                     .IsRequired()
                     .HasMaxLength(20);
             });

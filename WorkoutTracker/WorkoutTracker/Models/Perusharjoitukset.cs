@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Linq;
+using System.Threading.Tasks;
 
-namespace WorkoutTracker.Database
+namespace WorkoutTracker.Models
 {
-    public partial class Perusharjoitukset
+    public class Perusharjoitukset
     {
         public int PerusID { get; set; }
         [Display(Name = "Päivämäärä")]

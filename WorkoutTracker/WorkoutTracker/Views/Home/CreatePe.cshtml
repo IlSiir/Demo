@@ -1,0 +1,55 @@
+﻿@model WorkoutTracker.Models.Perusharjoitukset
+
+@{
+    ViewData["Title"] = "CreatePe";
+}
+
+<h2>CreatePe</h2>
+
+<h4>Perusharjoitukset</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="CreatePe">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="PerusID" class="control-label"></label>
+                <input asp-for="PerusID" class="form-control" />
+                <span asp-validation-for="PerusID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Päivämäärä" class="control-label"></label>
+                <input asp-for="Päivämäärä" class="form-control" />
+                <span asp-validation-for="Päivämäärä" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Vatsalihas" class="control-label"></label>
+                <input asp-for="Vatsalihas" class="form-control" />
+                <span asp-validation-for="Vatsalihas" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Etunojapunnerrus" class="control-label"></label>
+                <input asp-for="Etunojapunnerrus" class="form-control" />
+                <span asp-validation-for="Etunojapunnerrus" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Selkälihas" class="control-label"></label>
+                <input asp-for="Selkälihas" class="form-control" />
+                <span asp-validation-for="Selkälihas" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Jalkakyykky" class="control-label"></label>
+                <input asp-for="Jalkakyykky" class="form-control" />
+                <span asp-validation-for="Jalkakyykky" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Perus">Back to List</a>
+</div>
+

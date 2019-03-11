@@ -1,0 +1,80 @@
+﻿@model IEnumerable<WorkoutTracker.Database.Aerobinenharjoitus>
+
+@{
+    ViewData["Title"] = "Aerobinen";
+}
+
+<h2>Aerobiset harjoitukset</h2>
+
+<p>
+    <a asp-action="CreateA">Create New</a>
+</p>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>
+
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AeroID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Päivämäärä)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Lenkkeilymatka)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Lenkkeilyaika)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Pyöräilymatka)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Pyöräilyaika)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Hyppynaru)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nyrkkeilysäkkiaika)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            
+            <td>
+                @Html.ActionLink("Edit", "EditA", new { id = item.AeroID }) |
+                <a href="@Url.Action("Delete", "Home/Aerobinen"), new { id = item.Id }" class="btn btn-success btn-xs">Delete</a>
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AeroID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Päivämäärä)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Lenkkeilymatka)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Lenkkeilyaika)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pyöräilymatka)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pyöräilyaika)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Hyppynaru)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nyrkkeilysäkkiaika)
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>

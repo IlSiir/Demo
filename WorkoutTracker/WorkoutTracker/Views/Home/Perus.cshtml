@@ -1,0 +1,66 @@
+﻿@model IEnumerable<WorkoutTracker.Database.Perusharjoitukset>
+
+@{
+    ViewData["Title"] = "Perusharjoitukset";
+}
+
+<h2>Perusharjoitukset</h2>
+
+<p>
+    <a asp-action="CreatePe">Create New</a>
+</p>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>
+
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PerusID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Päivämäärä)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Vatsalihas)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Etunojapunnerrus)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Selkälihas)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Jalkakyykky)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.ActionLink("Edit", "EditPe", new { id = item.PerusID }) |
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PerusID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Päivämäärä)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Vatsalihas)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Etunojapunnerrus)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Selkälihas)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Jalkakyykky)
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>

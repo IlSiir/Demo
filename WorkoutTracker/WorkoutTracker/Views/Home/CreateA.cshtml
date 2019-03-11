@@ -1,0 +1,65 @@
+﻿@model WorkoutTracker.Database.Aerobinenharjoitus
+
+@{
+    ViewData["Title"] = "CreateA";
+}
+
+<h2>CreateA</h2>
+
+<h4>Aerobinenharjoitus</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="CreateA">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="AeroID" class="control-label"></label>
+                <input asp-for="AeroID" class="form-control" />
+                <span asp-validation-for="AeroID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Päivämäärä" class="control-label"></label>
+                <input asp-for="Päivämäärä" class="form-control" />
+                <span asp-validation-for="Päivämäärä" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Lenkkeilymatka" class="control-label"></label>
+                <input asp-for="Lenkkeilymatka" class="form-control" />
+                <span asp-validation-for="Lenkkeilymatka" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Lenkkeilyaika" class="control-label"></label>
+                <input asp-for="Lenkkeilyaika" class="form-control" />
+                <span asp-validation-for="Lenkkeilyaika" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Pyöräilymatka" class="control-label"></label>
+                <input asp-for="Pyöräilymatka" class="form-control" />
+                <span asp-validation-for="Pyöräilymatka" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Pyöräilyaika" class="control-label"></label>
+                <input asp-for="Pyöräilyaika" class="form-control" />
+                <span asp-validation-for="Pyöräilyaika" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Hyppynaru" class="control-label"></label>
+                <input asp-for="Hyppynaru" class="form-control" />
+                <span asp-validation-for="Hyppynaru" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Nyrkkeilysäkkiaika" class="control-label"></label>
+                <input asp-for="Nyrkkeilysäkkiaika" class="form-control" />
+                <span asp-validation-for="Nyrkkeilysäkkiaika" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Aerobinen">Back to List</a>
+</div>
+

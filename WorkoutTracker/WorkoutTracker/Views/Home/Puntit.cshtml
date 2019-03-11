@@ -1,0 +1,126 @@
+﻿@model IEnumerable<WorkoutTracker.Database.Punttiennosto>
+
+@{
+    ViewData["Title"] = "Punttiennosto";
+}
+
+<h2>Punttiennosto</h2>
+
+<p>
+    <a asp-action="CreatePu">Create New</a>
+</p>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>
+
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PunttiID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Päivämäärä)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Penkkipunnerruspaino)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Penkkipunnerrustoistot)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ylätaljapaino)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ylätaljatoistot)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Hauistankopaino)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Hauistankotoistot)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Kyykkypaino)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Kyykkytoistot)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Deadliftpaino)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Deadlifttoistot)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Hauisvasenpaino)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Hauisvasentoistot)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Hauisoikeapaino)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Hauisoikeatoistot)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.ActionLink("Edit", "EditPu", new { id = item.PunttiID }) |
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PunttiID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Päivämäärä)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Penkkipunnerruspaino)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Penkkipunnerrustoistot)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ylätaljapaino)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ylätaljatoistot)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Hauistankopaino)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Hauistankotoistot)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Kyykkypaino)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Kyykkytoistot)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Deadliftpaino)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Deadlifttoistot)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Hauisvasenpaino)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Hauisvasentoistot)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Hauisoikeapaino)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Hauisoikeatoistot)
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>

@@ -14,76 +14,76 @@ namespace WorkoutTracker.Controllers
     {
         [HttpGet]
         [Route("")]
-        public List<Perusharjoitukset> Listaus()
+        public List<Perusharjoitukset> Listaus2()
         {
-            WorkoutTrackerContext context = new WorkoutTrackerContext();
-            List<Perusharjoitukset> allCustomers = context.Perusharjoitukset.ToList();
+            WorkoutTrackerContext context2 = new WorkoutTrackerContext();
+            List<Perusharjoitukset> allResults2 = context2.Perusharjoitukset.ToList();
 
-            return allCustomers;
+            return allResults2;
         }
 
         [HttpGet]
-        [Route("{päivämäärä}")]
-        public Perusharjoitukset Yksittäinen(string asiakasId)
+        [Route("{perusID}")]
+        public Perusharjoitukset Yksittäinen2(int perusID)
         {
-            WorkoutTrackerContext context = new WorkoutTrackerContext();
-            Perusharjoitukset asiakas = context.Perusharjoitukset.Find(asiakasId);
+            WorkoutTrackerContext context2 = new WorkoutTrackerContext();
+            Perusharjoitukset perus = context2.Perusharjoitukset.Find(perusID);
 
-            return asiakas;
+            return perus;
         }
 
         [HttpPost]
         [Route("")]
-        public bool Luonti([FromBody] Perusharjoitukset uusi)
+        public bool Luonti2([FromBody] Perusharjoitukset uusi2)
         {
-            WorkoutTrackerContext context = new WorkoutTrackerContext();
-            context.Perusharjoitukset.Add(uusi);
-            context.SaveChanges();
+            WorkoutTrackerContext context2 = new WorkoutTrackerContext();
+            context2.Perusharjoitukset.Add(uusi2);
+            context2.SaveChanges();
 
             return true;
         }
 
         [HttpPut]
-        [Route("{päivämäärä}")]
-        public Perusharjoitukset Muokkaus(string päivämäärä, [FromBody] Perusharjoitukset muutokset)
+        [Route("{perusID}")]
+        public Perusharjoitukset Muokkaus2(int perusID, [FromBody] Perusharjoitukset muutokset)
         {
-            WorkoutTrackerContext context = new WorkoutTrackerContext();
-            Perusharjoitukset päivä = context.Perusharjoitukset.Find(päivämäärä);
+            WorkoutTrackerContext context2 = new WorkoutTrackerContext();
+            Perusharjoitukset perus = context2.Perusharjoitukset.Find(perusID);
 
             // löytyikö asiakas annetulla id:llä?
-            if (päivä == null)
+            if (perus == null)
             {
                 return null;
             }
 
             // muokkaus
-            päivä.Päivämäärä = muutokset.Päivämäärä;
-            päivä.Kuukausi = muutokset.Kuukausi;
-            päivä.Vatsalihas = muutokset.Vatsalihas;
-            päivä.Etunojapunnerrus = muutokset.Etunojapunnerrus;
-            päivä.Selkälihas = muutokset.Selkälihas;
-            päivä.Jalkakyykky = muutokset.Jalkakyykky;
+            perus.PerusID = muutokset.PerusID;
+            perus.Päivämäärä = muutokset.Päivämäärä;
+            perus.Vatsalihas = muutokset.Vatsalihas;
+            perus.Etunojapunnerrus = muutokset.Etunojapunnerrus;
+            perus.Selkälihas = muutokset.Selkälihas;
+            perus.Jalkakyykky = muutokset.Jalkakyykky;
 
-            context.SaveChanges();
+            context2.SaveChanges();
 
-            return päivä;
+            return perus;
         }
 
 
         [HttpDelete]
-        [Route("{päivämäärä}")]
-        public bool Poisto(string päivämäärä)
+        [Route("{perusID}")]
+        public bool Poisto2(int perusID)
         {
-            WorkoutTrackerContext context = new WorkoutTrackerContext();
-            Perusharjoitukset päivä = context.Perusharjoitukset.Find(päivämäärä);
+            WorkoutTrackerContext context2 = new WorkoutTrackerContext();
+            Perusharjoitukset perus = context2.Perusharjoitukset.Find(perusID);
 
-            if (päivä == null)
+            if (perus == null)
             {
                 return false;
             }
 
-            context.Perusharjoitukset.Remove(päivä);
-            context.SaveChanges();
+            context2.Perusharjoitukset.Remove(perus);
+            context2.SaveChanges();
 
             return true;
         }
